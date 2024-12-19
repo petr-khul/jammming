@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./SearchBar.css";
 
 export default function SearchBar({onSearchChange}) {
     const [searchQuery, setSearchQuery ] = useState('');
@@ -9,9 +10,10 @@ export default function SearchBar({onSearchChange}) {
     };
 
     return (
-        <div>
+        <div className="search-bar">
             <input 
                 type="text"
+                className="searchBarInput"
                 value={searchQuery}
                 onChange={handleChange}
                 placeholder="Search for a song..."

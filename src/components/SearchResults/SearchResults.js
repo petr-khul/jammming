@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Spotify from "../../services/SpotifyAuth";
+import TrackList from "../Tracklist/Tracklist";
+
+import "./SearchResults.css";
 
 export default function SearchResults ({ searchQuery }){
     const [songs, setSongs] = useState([]);
-    const [filteredSongs, setFilteredSongs] = useState([]);
+    //const [filteredSongs, setFilteredSongs] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(()=> {
         if (searchQuery.trim()==="") {
-            setFilteredSongs([]);
+            setSongs([]);
             return;
         }
 
@@ -19,7 +22,7 @@ export default function SearchResults ({ searchQuery }){
               const songsData = await Spotify.search(searchQuery);
       
               // Filter songs based on search query if needed
-              setFilteredSongs(songsData);
+              setSongs(songsData);
             } catch (error) {
               console.error('Error fetching songs from Spotify:', error);
             } finally {
@@ -30,23 +33,16 @@ export default function SearchResults ({ searchQuery }){
           fetchSongs();
         }, [searchQuery]);
     
-      return (
-        <div>
-        {isLoading && <p>Loading...</p>}
-        {searchQuery.trim() === "" ? (
-          <p>Please enter a search term.</p>  // Show message when searchQuery is empty
-        ) : filteredSongs.length > 0 ? (
-          filteredSongs.map((song) => (
-            <div key={song.id}>
-              <h3>{song.name}</h3>
-              <p>{song.artist}</p>
-              <p>{song.album}</p>
+        return (
+            <div className="search-results">
+              {isLoading && <p>Loading...</p>}
+              {searchQuery.trim() === "" ? (
+                <p></p>
+              ) : songs.length > 0 ? (
+                <TrackList tracks={songs} />
+              ) : (
+                <p>No songs found.</p>
+              )}
             </div>
-          ))
-        ) : (
-          <p>No songs found.</p>  // Show message when no results are found
-        )}
-      </div>
-      );
-
-}
+          );
+        }

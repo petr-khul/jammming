@@ -17,7 +17,7 @@ function App() {
         <h1>Jammming</h1>
       </header>
       <main>
-      <h2>Search songs</h2>
+      <h2>What would you like to play?</h2>
         <SearchBar onSearchChange={handleSearchChange}/>
         <SearchResults searchQuery={searchQuery}/>
       </main>
