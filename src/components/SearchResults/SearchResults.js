@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Spotify from "../../services/SpotifyAuth";
 
 export default function SearchResults ({ searchQuery }){
     const [songs, setSongs] = useState([]);
@@ -11,31 +12,23 @@ export default function SearchResults ({ searchQuery }){
             return;
         }
 
-        async function fetchSongs(){
+        async function fetchSongs() {
             setIsLoading(true);
             try {
-                const response = await fetch('./songs.json');
-                const data = await response.json();                           //converts the response to js object
-                const songsData = data.songs;
-
-                        // Filter songs based on searchQuery
-                const filtered = songsData.filter(song =>
-                    song.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    song.artist.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    song.album.toLowerCase().includes(searchQuery.toLowerCase())
-                );
-
-                setFilteredSongs(filtered);
+              // Use the Spotify API to search for tracks
+              const songsData = await Spotify.search(searchQuery);
+      
+              // Filter songs based on search query if needed
+              setFilteredSongs(songsData);
             } catch (error) {
-                console.error('Error fetching songs:', error);
+              console.error('Error fetching songs from Spotify:', error);
             } finally {
-                setIsLoading(false);
+              setIsLoading(false);
             }
-        };
-
-        fetchSongs();
-        //console.log(songs)
-    }, [searchQuery]);
+          }
+      
+          fetchSongs();
+        }, [searchQuery]);
     
       return (
         <div>
