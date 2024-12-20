@@ -1,4 +1,5 @@
 import React from "react";
+import "./Playlist.css";
 
 export default function Playlist({playlist, onRemove, onSave}){
     return(
@@ -9,7 +10,7 @@ export default function Playlist({playlist, onRemove, onSave}){
                 {playlist.map((track) => (
                 <li key={track.id}>
                     <strong>{track.name}</strong> by {track.artist}
-                    <button onClick={() => onRemove(track.id)}>Remove</button>
+                    <button className="removeTrack" onClick={() => onRemove(track.id)}>-</button>
                 </li>
                 ))}
             </ul>

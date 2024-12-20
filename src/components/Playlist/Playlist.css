@@ -1,0 +1,26 @@
+.removeTrack {
+    font-size: 48px;
+    margin: 15px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #701111;
+    transition: background-color 0.3s ease; 
+    cursor: pointer; 
+    border: none; 
+    color: white;  
+}
+
+.playlist {
+    background-color: rgba(18, 63, 22, 0.4);
+    padding: 5px;
+    border-radius: 15px;
+    min-height: 200px;
+    display: inline;
+}
+.playlist ul li{
+    font-size: 18px;;
+}
+
+

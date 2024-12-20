@@ -20,7 +20,7 @@
 }
 
 .search-bar input[type="text"]:focus {
-    border-color: #0073e6; 
+    border-color: #00c010; 
 }
 
 .search-bar input[type="text"]::placeholder {
@@ -30,26 +30,27 @@
 }
 
 .searchButton {
-    width: 50%;
+    width: 35%;
     margin-top: 1rem;
+    margin-bottom: 3rem;
     font-size: 32px;
     text-transform: uppercase;
     border-radius: 15px;
     padding: 5px;
     cursor: pointer;
-    background-color: #0073e6;
-    color: #ccc
+    background-color: #00c010;
+    color: #ffffff;
+    font-weight: bolder;
 }
 
 .searchButton:hover {
-    width: 50%;
     margin-top: 1rem;
     font-size: 32px;
     text-transform: uppercase;
     border-radius: 15px;
     padding: 5px;
     cursor: pointer;
-    background-color: #0368cc;
+    background-color: #079e02;
     color: #aaa; 
     box-shadow: 2px #aaa;
 }

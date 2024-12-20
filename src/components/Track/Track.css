@@ -11,6 +11,7 @@
     text-align: left;
     list-style-type: none;
     text-wrap: wrap;
+    font-size: 18px;
 }
 
 .track-record {
@@ -23,6 +24,7 @@
 .addButton {
     align-items: center;
     justify-content: center;
+    display: flex;
     font-size: 100px;
     padding: 10px;
 }
@@ -35,6 +37,8 @@
     cursor: pointer; 
     border: none; 
     color: white;  
+    width: 50px;
+    height: 50px;
 }
 
 .addButton button:hover {
