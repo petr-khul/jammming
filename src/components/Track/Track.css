@@ -1,0 +1,43 @@
+.track {
+    margin: 20px 0;
+    align-items: flex-end;
+}
+
+.track ul {
+    margin: 0 auto;
+}
+
+.track ul li {
+    text-align: left;
+    list-style-type: none;
+    text-wrap: wrap;
+}
+
+.track-record {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.addButton {
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    padding: 10px;
+}
+
+.addButton button {
+    font-size: 48px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    transition: background-color 0.3s ease; 
+    cursor: pointer; 
+    border: none; 
+    color: white;  
+}
+
+.addButton button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+  }
+

@@ -10,9 +10,25 @@
   color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchBar {
+  width: 100%;
+}
+
+.mainApp {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.searchResult {
+  width: 800px;
+  margin: 10px;
+}
+
+.playlist {
+  width: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {

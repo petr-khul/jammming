@@ -2,6 +2,10 @@
     width: 100%; 
     max-width: 1000px; 
     margin: 0 auto; 
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-bar input[type="text"] {
@@ -23,4 +27,29 @@
     color: #aaa; 
     font-style: italic; 
     margin: 0 5px;
+}
+
+.searchButton {
+    width: 50%;
+    margin-top: 1rem;
+    font-size: 32px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #0073e6;
+    color: #ccc
+}
+
+.searchButton:hover {
+    width: 50%;
+    margin-top: 1rem;
+    font-size: 32px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #0368cc;
+    color: #aaa; 
+    box-shadow: 2px #aaa;
 }
