@@ -38,37 +38,7 @@ export default function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Jammming</h1>
-      </header>
-      <main>
-        <div className="searchBar">
-          <h2>What would you like to play?</h2>
-          <SearchBar 
-            searchQuery={searchQuery} 
-            onSearchChange={handleSearchChange} 
-            onSearchButtonClick={handleSearchButtonClick} 
-          />
 
-        </div>
-        <div className="mainApp">
-          <div className="searchResult">
-            <SearchResults 
-              searchQuery={triggeredQuery} 
-              onAddToPlaylist={handleAddToPlaylist} 
-            />
-          </div>
-          <div className="playlist">
-            <Playlist
-              playlist={playlist}
-              onRemove={handleRemoveFromPlaylist}
-              onSave={handleSavePlaylist}
-            />
-          </div>
-        </div>
-      </main>
-    </div>
   );
 }
 
