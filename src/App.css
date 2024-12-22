@@ -23,6 +23,13 @@
   letter-spacing: 10px;
 }
 
+.app-playlist {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
